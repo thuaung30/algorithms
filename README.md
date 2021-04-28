@@ -1,8 +1,8 @@
-### Algorithms
+## Algorithms
 
-These algoriths are written in Rust for practice.
+These algorithms are written in Rust for practice.
 
-## Implemented algorithms
+### Implemented algorithms
 
 - bubblesort
 - selectionsort
