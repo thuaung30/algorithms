@@ -1,13 +1,14 @@
 pub trait Sorter<T> {
     fn sort(slice: &mut [T])
     where
-        T: Ord;
+        T: Ord + Copy;
 }
 
 mod bubblesort;
 mod insertionsort;
 mod quicksort;
 mod selectionsort;
+mod mergesort;
 
 struct StdSorter;
 
