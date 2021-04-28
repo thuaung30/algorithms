@@ -18,12 +18,10 @@ impl<T> Sorter<T> for SelectionSort {
             //only swap if the smallest element index is not the same
             if unsorted != smallest_index {
                 slice.swap(unsorted, smallest_index);
-            } 
+            }
         }
     }
 }
-
-
 
 #[cfg(test)]
 mod tests {

@@ -6,15 +6,16 @@ pub trait Sorter<T> {
 
 mod bubblesort;
 mod insertionsort;
-mod selectionsort;
 mod quicksort;
+mod selectionsort;
 
 struct StdSorter;
 
 impl<T> Sorter<T> for StdSorter {
     fn sort(slice: &mut [T])
     where
-            T: Ord {
+        T: Ord,
+    {
         slice.sort();
     }
 }

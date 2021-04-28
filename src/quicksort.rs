@@ -2,15 +2,18 @@ use crate::Sorter;
 
 struct QuickSort;
 
-fn quicksort<T>(slice: &mut [T]) where T: Ord {
+fn quicksort<T>(slice: &mut [T])
+where
+    T: Ord,
+{
     match slice.len() {
         0 | 1 => return,
         2 => {
-            if slice[0] > slice [1] {
+            if slice[0] > slice[1] {
                 slice.swap(0, 1);
             }
-            return
-        },
+            return;
+        }
         _ => {}
     }
 
@@ -21,7 +24,7 @@ fn quicksort<T>(slice: &mut [T]) where T: Ord {
     while left <= right {
         if &rest[left] <= pivot {
             //left already on the right side
-            left +=1;
+            left += 1;
         } else if &rest[right] > pivot {
             //right already on the right side
             //avoid unnecessary swaps
@@ -42,7 +45,7 @@ fn quicksort<T>(slice: &mut [T]) where T: Ord {
         }
     }
 
-    //align left to make up for pivot 
+    //align left to make up for pivot
     let left = left + 1;
 
     slice.swap(0, left - 1);
@@ -55,7 +58,6 @@ fn quicksort<T>(slice: &mut [T]) where T: Ord {
     quicksort(&mut right[1..]);
 }
 
-
 impl<T> Sorter<T> for QuickSort {
     fn sort(slice: &mut [T])
     where
@@ -64,8 +66,6 @@ impl<T> Sorter<T> for QuickSort {
         quicksort(slice);
     }
 }
-
-
 
 #[cfg(test)]
 mod tests {
@@ -81,7 +81,7 @@ mod tests {
 
     #[test]
     fn quicksort_works2() {
-        let mut slice = vec![7, 8, 1, 5, 9, 6, 40 , 19, 58];
+        let mut slice = vec![7, 8, 1, 5, 9, 6, 40, 19, 58];
         QuickSort::sort(&mut slice);
         assert_eq!(slice, vec![1, 5, 6, 7, 8, 9, 19, 40, 58]);
     }
