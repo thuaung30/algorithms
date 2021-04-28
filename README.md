@@ -1,4 +1,4 @@
-## Algorithms
+## Sorting Algorithms
 
 These algorithms are written in Rust for practice.
 
